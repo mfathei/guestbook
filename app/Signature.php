@@ -18,4 +18,13 @@ class Signature extends Model
     public function scopeIgnoreFlagged($query){
     	return $query->where('flagged_at', null);
     }
+
+    /**
+    * Flag the given signature
+    *
+    * @return bool
+    */
+    public function flag(){
+    	return $this->update(['flagged_at' => \Carbon\Carbon::now()]);
+    }
 }
