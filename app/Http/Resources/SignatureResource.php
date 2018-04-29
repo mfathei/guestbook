@@ -18,7 +18,7 @@ class SignatureResource extends Resource
         	'id'     => $this->id,
         	'name'   => $this->name,
         	'avatar' => $this->avatar,
-        	'body'   => $this->avatar,
+        	'body'   => $this->body,
         	'date'   => $this->created_at->diffForHumans()
         ];
     }

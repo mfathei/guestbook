@@ -1,0 +1,134 @@
+{
+	"info": {
+		"name": "guest book",
+		"_postman_id": "9a6be0fa-c02f-4de7-a5a3-64ce7ac5ae5c",
+		"description": "test guestbook project endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List all signatures",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://guestbook.loc/api/signatures",
+					"protocol": "http",
+					"host": [
+						"guestbook",
+						"loc"
+					],
+					"path": [
+						"api",
+						"signatures"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Find a signature by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://guestbook.loc/api/signatures/11",
+					"protocol": "http",
+					"host": [
+						"guestbook",
+						"loc"
+					],
+					"path": [
+						"api",
+						"signatures",
+						"11"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create a new signature",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "John Doe",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "johndoe@yahoo.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "body",
+							"value": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://guestbook.loc/api/signatures/",
+					"protocol": "http",
+					"host": [
+						"guestbook",
+						"loc"
+					],
+					"path": [
+						"api",
+						"signatures",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Report a signature",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://guestbook.loc/api/signatures/1/report",
+					"protocol": "http",
+					"host": [
+						"guestbook",
+						"loc"
+					],
+					"path": [
+						"api",
+						"signatures",
+						"1",
+						"report"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

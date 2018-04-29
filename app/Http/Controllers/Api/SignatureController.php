@@ -14,8 +14,8 @@ class SignatureController extends Controller
 	*
 	* @return SignatureResource
     */
-    public index(){
-    	$signatures = App::Signature::latest()->ignoreFlagged()->paginate(20);
+    public function index(){
+    	$signatures = Signature::latest()->ignoreFlagged()->paginate(20);
     	return SignatureResource::collection($signatures);
     }
 
@@ -36,10 +36,11 @@ class SignatureController extends Controller
     * @return SignatureResource
     */
     public function store(Request $request){
-    	$signature = $this->validate([
-    		'name' => 'required|min:3|max:50',
-    		'emai' => 'required|email',
-    		'body' => 'required|min:3'
+
+    	$signature = $this->validate($request, [
+    		'name'  => 'required|min:3|max:50',
+    		'email' => 'required|email',
+    		'body'  => 'required|min:3'
     	]);
 
     	$signature = Signature::create($signature);
