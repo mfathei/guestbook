@@ -21,6 +21,6 @@ class SignaturesController extends Controller
 	* @return \Illuminate\Http\Response
 	*/
 	public function create(){
-		reurn view('signatures.sign');
+		return view('signatures.sign');
 	}
 }
